@@ -7,6 +7,7 @@ package pl.kononowicz.biznes.app;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -115,9 +116,54 @@ public class MainController {
 
                 return userRepository.findOne(id);
         }
+        
+         @RequestMapping("/geteasybyid/{id}")
+        public @ResponseBody
+        ArrayList<Integer> getEasyProductRecommendation(@PathVariable("id") int id, @PathVariable("items") int items, @PathVariable("similarity") Double sim) throws TasteException {
+                //int howManyItems = 3;
+
+//                UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
+//                UserNeighborhood neighborhood = new ThresholdUserNeighborhood(sim, similarity, model);
+//                UserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
+//
+//                List recommendations = recommender.recommend(id, items);
+//                System.out.println("Recommendation for " + id);
+//                recommendations.forEach((recommendation) -> {
+//                        System.out.println(recommendation);
+//                });
+
+                ArrayList<Integer> ar = new ArrayList<Integer>();
+                ar.add(1);
+                ar.add(2);
+                ar.add(3);
+                
+                return ar;
+        }
+        
+        
 }
 
 /*
+@RequestMapping("/getbyid/{id}&{items}&{similarity}")
+        public @ResponseBody
+        User getRecommendation(@PathVariable("id") int id, @PathVariable("items") int items, @PathVariable("similarity") Double sim) throws TasteException {
+                //int howManyItems = 3;
+
+                UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
+                UserNeighborhood neighborhood = new ThresholdUserNeighborhood(sim, similarity, model);
+                UserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
+
+                List recommendations = recommender.recommend(id, items);
+                System.out.println("Recommendation for " + id);
+                recommendations.forEach((recommendation) -> {
+                        System.out.println(recommendation);
+                });
+
+                return userRepository.findOne(id);
+        }
+
+
+
  @RequestMapping("/server/{id}")
         public @ResponseBody
         Server getServerById(@PathVariable("id") String id) {
