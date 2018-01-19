@@ -34,9 +34,8 @@
                             <artifactId>spring-boot-starter-data-jpa</artifactId>
                         </dependency>
                         <dependency>
-                            <groupId>com.microsoft.sqlserver</groupId>
-                            <artifactId>sqljdbc4</artifactId>
-                            <version>4.0</version>
+                            <groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
                         </dependency>
                         <dependency>
                             <groupId>org.springframework.boot</groupId>
@@ -54,7 +53,7 @@
                                 <artifactId>mahout-mr</artifactId>
                                 <version>0.12.2</version>
                         </dependency>
-                          <!--
+                          
                         <dependency>
                                     <groupId>org.springframework.boot</groupId>
                                     <artifactId>spring-boot-starter</artifactId>
@@ -99,10 +98,10 @@
                                 <version>4.3.13.RELEASE</version>
                                 <type>jar</type>
                          </dependency>
-	 <dependency>
+	
 	  
          
-        -->
+       
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
