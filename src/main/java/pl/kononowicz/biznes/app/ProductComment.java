@@ -5,6 +5,7 @@
  */
 package pl.kononowicz.biznes.app;
 
+import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,29 +17,20 @@ import javax.persistence.Table;
  * @author alexp
  */
 @Entity // This tells Hibernate to make a table out of this class
-@Table(name = "author")
-public class Author {
-
+@Table(name = "ps_product_comment")
+public class ProductComment {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private Integer id;
-
-        private String name;
-
-        public Integer getId() {
-                return id;
-        }
-
-        public void setId(Integer id) {
-                this.id = id;
-        }
-
-        public String getName() {
-                return name;
-        }
-
-        public void setName(String name) {
-                this.name = name;
-        }
-
+         Integer id_product_comment;
+         Integer id_product;
+         Integer id_customer;
+         Integer id_guest;
+         String title;
+         String content;
+         String customer_name;
+         Float grade;
+         Boolean validate;
+         Boolean deleted;
+         Date date_add;
+        
 }
